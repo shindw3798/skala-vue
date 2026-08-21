@@ -2,6 +2,10 @@
 
 SKALA Vue.js Hands on 과제를 연결하고 야외 활동 추천 기능을 추가한 Vue 3 날씨 대시보드
 
+## 배포 주소
+
+- [https://skala-vue-silk.vercel.app/](https://skala-vue-silk.vercel.app/)
+
 ## 프로젝트 개요
 
 교재에서 배운 Vue 문법, 컴포넌트, Router, Pinia와 Axios를 한 프로젝트에서 사용하기 위해 만들었습니다. 서울·수원·부산·광주의 날씨를 조회하고, 러닝·산책·자전거 중 선택한 활동의 적합도를 계산합니다.
@@ -71,7 +75,7 @@ OpenWeather API Key가 설정된 환경에서는 실제 API 데이터를 사용�
 | Pinia                       | 완료           | `unit` state, `unitSymbol` getter, `toggleUnit` action과 Navbar 옆 `UnitToggler`를 구현했습니다. 추가 Store에서 활동·즐겨찾기·최근 검색·마지막 도시를 관리하고 직접 `localStorage`에 저장합니다.                                        | `configStore.js`, `preferenceStore.js`, `UnitToggler.vue`, `useTemperature.js`       |
 | Axios                       | 완료           | OpenWeather Current Weather와 5 Day / 3 Hour Forecast, Open-Meteo Air Quality를 Axios 서비스로 분리했습니다. 로딩·오류·빈 상태·부분 실패·요청 취소와 최신 요청 우선 처리를 제공합니다.                                                  | `src/services/`, `useWeatherData.js`                                                 |
 | UI Library                  | 완료           | Element Plus의 Card, Input, Select, Button, Tag, Progress, Skeleton, Alert, Empty와 Message를 실제 검색·상태·피드백 UX에 적용했습니다.                                                                                                  | `src/components/exercise/`, 각 Weather View                                          |
-| Build & Deployment          | 배포 준비 완료 | format, lint, test와 production build가 성공했고 Vercel의 build command, output directory와 SPA rewrite를 설정했습니다.                                                                                                                 | `package.json`, `vercel.json`, 이 문서의 실행·검증 안내                              |
+| Build & Deployment          | 완료           | format, lint, test와 production build가 성공했고 Vercel Production 배포와 SPA 직접 경로 접근을 확인했습니다.                                                                                                                          | `package.json`, `vercel.json`, Vercel 배포 주소                                      |
 
 ## 기술 스택
 
@@ -317,7 +321,7 @@ npm run preview
 
 - Vercel, Netlify 등의 배포 환경에 `VITE_OPENWEATHER_API_KEY`를 비밀 환경변수로 등록합니다.
 - Vue Router가 HTML5 history 모드를 사용하므로 `/weather/seoul`, `/activity/seoul` 같은 경로를 직접 열거나 새로고침해도 `index.html`로 응답하도록 호스팅 서비스의 SPA rewrite/fallback을 설정해야 합니다.
-- 실제 배포는 이 저장소에서 수행하지 않았습니다.
+- Vercel Production 환경에 배포했으며, 홈·상세·활동·소개 Route의 직접 접근과 새로고침을 확인했습니다.
 
 ## 단원별 Customization
 
