@@ -14,7 +14,7 @@ const isButtonDisabled = ref(true)
     <br />
 
     <h3>2. 동적 이미지 연결</h3>
-    <img :src="logoImgSrc" alt="Vue Logo" style="width: 100px; height: 100px" />
+    <img class="vue-logo" :src="logoImgSrc" alt="Vue Logo" />
     <br />
 
     <h3>3. 버튼 비활성화 제어</h3>
@@ -23,3 +23,10 @@ const isButtonDisabled = ref(true)
     <button @click="isButtonDisabled = !isButtonDisabled">위 버튼 잠금 해제/토글하기</button>
   </div>
 </template>
+
+<style scoped>
+.vue-logo {
+  width: 100px;
+  height: 100px;
+}
+</style>

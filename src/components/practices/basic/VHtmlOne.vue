@@ -1,6 +1,5 @@
 <script setup>
-const rawHtmlData =
-  '이 글자는 <span style="color: red"; font-weight: bold;">빨간색 굵은 글자</span>이다.'
+const rawHtmlData = '이 글자는 <span class="v-html-highlight">빨간색 굵은 글자</span>이다.'
 </script>
 
 <template>
@@ -13,3 +12,11 @@ const rawHtmlData =
     <p v-html="rawHtmlData"></p>
   </div>
 </template>
+
+<style scoped>
+/* v-html로 삽입되는 동일 컴포넌트의 콘텐츠이므로 deep selector가 필요하다. */
+:deep(.v-html-highlight) {
+  color: red;
+  font-weight: 700;
+}
+</style>
